@@ -1,6 +1,5 @@
 {
   "name": "mockout",
-  "private": true,
   "version": "0.0.1",
   "description": "Mocking a series of objects being sent through stdout",
   "dependencies": {},
