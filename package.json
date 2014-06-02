@@ -1,0 +1,36 @@
+{
+  "name": "mockout",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Mocking a series of objects being sent through stdout",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^1.20.0",
+    "pre-commit": "0.0.7",
+    "should": "^4.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "NODE_ENV=test mocha test --recursive -R spec"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bredikhin/mockout.git"
+  },
+  "author": "Ruslan Bredikhin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredikhin/mockout/issues"
+  },
+  "homepage": "https://github.com/bredikhin/mockout",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "mocking",
+    "stdout",
+    "test",
+    "testing"
+  ]
+}
