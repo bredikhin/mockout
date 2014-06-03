@@ -23,21 +23,22 @@ describe('Mockout', function() {
 
   it('starts output upon connecting', function(done) {
     var message = {message: 'connect', some: 'thing'};
-    mockout.send(message);
 
     mockout.stdout.on('readable', function(data) {
-      var data = mockout.stdout.read().toString();;
+      var data = mockout.stdout.read().toString();
       data.should.containEql(JSON.stringify(message));
 
       done();
     });
+
+    mockout.send(message);
   });
 
   it('shuts down upon receiving a shutdown message', function(done) {
     mockout.send({message: 'shutdown'});
 
-    mockout.stdout.on('end', function(data) {
-      mockout.connected.should.not.be.True;
+    mockout.on('close', function(code, signal) {
+      code.should.be.eql(0);
 
       done();
     });
