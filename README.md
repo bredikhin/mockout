@@ -16,13 +16,13 @@
 var mockout = fork(require.resolve('mockout'), [], {silent: true});
 
 // Start sending messages
-mockout.send({message: 'connect', some: 'thing'});
+mockout.send({event: 'connect', some: 'thing'});
 
 // Check up on mockout.stdout
 // ...
 
 // Stop the messages
-mockout.send({message: 'shutdown'});
+mockout.send({event: 'shutdown'});
 ```
 
 ## Contributions
