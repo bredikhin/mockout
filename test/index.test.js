@@ -22,7 +22,7 @@ describe('Mockout', function() {
   });
 
   it('starts output upon connecting', function(done) {
-    var message = {message: 'connect', some: 'thing'};
+    var message = {event: 'connect', some: 'thing'};
 
     mockout.stdout.on('readable', function(data) {
       var data = mockout.stdout.read().toString();
@@ -35,7 +35,7 @@ describe('Mockout', function() {
   });
 
   it('shuts down upon receiving a shutdown message', function(done) {
-    mockout.send({message: 'shutdown'});
+    mockout.send({event: 'shutdown'});
 
     mockout.on('close', function(code, signal) {
       code.should.be.eql(0);
