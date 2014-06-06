@@ -39,6 +39,7 @@ describe('Mockout', function() {
 
     mockout.on('close', function(code, signal) {
       code.should.be.eql(0);
+      should(signal).be.Null;
 
       done();
     });
